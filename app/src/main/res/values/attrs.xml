@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageButtonWithText">
+        <attr name="picture" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="RoundImageView">
+        <attr name="border_thickness" format="dimension"></attr>
+     <!--   dimension   表示尺寸值-->
+        <attr name="border_inside_color" format="color"></attr>
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+</resources>

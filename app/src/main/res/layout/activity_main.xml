@@ -1,0 +1,115 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#cecbcb"/>
+    <RadioGroup
+        android:id="@+id/tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"/>
+        <RadioButton
+            android:id="@+id/rb_squre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_selector_squre"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="发现"
+            android:textSize="13dp"
+            android:textColor="#757575" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rb_find"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_find"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="搜索"
+            android:textSize="13dp"
+            android:textColor="#757575" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rb_add"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:button="@null"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingTop="2dp"
+            android:background="@mipmap/addd" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rb_my"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_home"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="我的"
+            android:textSize="13dp"
+            android:textColor="#757575" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rb_more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_more"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="更多"
+            android:textSize="13dp"
+            android:textColor="#757575" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"/>
+
+    </RadioGroup>
+
+
+</LinearLayout>

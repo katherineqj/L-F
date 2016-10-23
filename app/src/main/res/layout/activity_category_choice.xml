@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue_like"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/category_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择物品类型"
+            android:textSize="18dp"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="#f1f2f4"
+        android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:layout_weight="0.5"/>
+      <LinearLayout
+          android:layout_width="fill_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+          <Button
+              android:gravity="center"
+              android:id="@+id/wallet"
+              android:background="@drawable/category_choice_button"
+              android:drawableTop="@drawable/wallet_one"
+              android:text="钱包"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:id="@+id/packagestu"
+              android:background="@drawable/category_choice_button"
+              android:drawableTop="@drawable/package_one"
+              android:gravity="center"
+              android:text="书包"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:background="@drawable/category_choice_button"
+              android:drawableTop="@drawable/bycicle_one"
+              android:id="@+id/bciycle"
+              android:gravity="center"
+              android:text="自行车"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+      </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"/>
+      <LinearLayout
+          android:layout_width="fill_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+          <Button
+              android:drawableTop="@drawable/clothes_one"
+              android:id="@+id/clothes"
+              android:gravity="center"
+              android:text="衣服"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:drawableTop="@drawable/card_one"
+              android:id="@+id/crad"
+              android:gravity="center"
+              android:text="一卡通"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:drawableTop="@drawable/key"
+              android:id="@+id/key"
+              android:gravity="center"
+              android:text="钥匙"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+      </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"/>
+      <LinearLayout
+          android:layout_width="fill_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+          <Button
+              android:drawableTop="@drawable/shuma"
+              android:id="@+id/shuma"
+              android:gravity="center"
+              android:text="数码"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:drawableTop="@drawable/books_one"
+              android:id="@+id/books"
+              android:gravity="center"
+              android:text="书籍"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+          <Button
+              android:drawableTop="@drawable/other_one"
+              android:id="@+id/others"
+              android:gravity="center"
+              android:text="其他"
+              android:background="@drawable/category_choice_button"
+              android:layout_width="100dp"
+              android:layout_height="100dp" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" />
+
+      </LinearLayout>
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:layout_weight="1"/>
+  </LinearLayout>
+
+</LinearLayout>

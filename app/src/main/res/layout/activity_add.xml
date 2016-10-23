@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#f7f7f7"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:textColor="#201e1e"
+        android:background="#ffffff"
+        android:text="选择消息类型"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/add_button_find"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="寻物启事"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/find_button"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+       />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"/>
+
+    <Button
+        android:id="@+id/add_button_get"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="招领启事"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/get_button"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"/>
+
+
+</LinearLayout>
