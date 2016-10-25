@@ -37,8 +37,6 @@ public class myLoginActivity extends Activity implements View.OnClickListener {
 
     private boolean mbDisplayFlag = false;
     private Button buttonSee;
-
-
     private String stringUsername;
     private String stringPassword;
 
@@ -87,6 +85,9 @@ public class myLoginActivity extends Activity implements View.OnClickListener {
                         @Override
                         public void onSuccess() {
                             Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
+                            finish();
+                            overridePendingTransition(R.anim.out_alpha_b, R.anim.enter_alpha_b);
+
                         }
 
                         @Override
@@ -97,6 +98,10 @@ public class myLoginActivity extends Activity implements View.OnClickListener {
                                 Toast.makeText(getApplicationContext(), "用户名或密码不正确", Toast.LENGTH_SHORT).show();
                                 editTextUsername.setText("");
                                 editTextPassword.setText("");
+                            }
+                            if(s.equals("The network is not available,please check your network!")){
+                                Toast.makeText(getApplicationContext(), "手机没网了啦~~", Toast.LENGTH_SHORT).show();
+
                             }
 
                         }

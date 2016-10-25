@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/edit_edittext_focused"
+        android:layout_width="270dp"
+        android:layout_height="150dp"
+        android:padding="20dp"
+        android:text="点我就知道肯定是要先登录的啊"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_one"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>

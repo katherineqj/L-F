@@ -91,10 +91,15 @@ public class myRegisterActivity extends Activity implements View.OnClickListener
                 LfUser newLfUser = new LfUser();
                 newLfUser.setUsername(registerStringUsername);
                 newLfUser.setPassword(registerStringPassword);
+                newLfUser.setEmail(registerStringUsername);
+                newLfUser.setIntroduce("么么哒，求指教(～￣▽￣)～*");
                 newLfUser.signUp(getApplicationContext(), new SaveListener() {
                     @Override
                     public void onSuccess() {
                         Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();
+                        finish();
+                        overridePendingTransition(R.anim.out_alpha_b, R.anim.enter_alpha_b);
+
                     }
 
                     @Override

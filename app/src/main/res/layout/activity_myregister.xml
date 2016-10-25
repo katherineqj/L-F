@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/blue_like"
+        android:background="@color/blue_one"
         android:layout_height="50dp"
         android:orientation="horizontal">
         <TextView
@@ -103,24 +103,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
-            <LinearLayout
-                android:background="@drawable/edittext_style"
-                android:layout_width="0dp"
-                android:layout_weight="12"
-                android:clickable="true"
-                android:orientation="horizontal"
-                android:layout_height="match_parent">
                 <EditText
                     android:id="@+id/registerEdittextPassword"
                     android:hint=" Password"
                     android:password="true"
                     android:padding="5dp"
-                    android:background="@null"
+                    android:background="@drawable/edittext_style"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="12"/>
-
-            </LinearLayout>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -135,24 +126,17 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
-            <LinearLayout
-                android:background="@drawable/edittext_style"
-                android:layout_width="0dp"
-                android:layout_weight="12"
-                android:clickable="true"
-                android:orientation="horizontal"
-                android:layout_height="match_parent">
+
                 <EditText
                     android:id="@+id/registerEdittextPassword_two"
                     android:hint=" Password Again"
                     android:password="true"
                     android:padding="5dp"
-                    android:background="@null"
+                    android:background="@drawable/edittext_style"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="12"/>
 
-            </LinearLayout>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

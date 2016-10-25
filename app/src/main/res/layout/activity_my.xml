@@ -9,8 +9,8 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:textSize="17dp"
-        android:textColor="#201e1e"
-        android:background="#ffffff"
+        android:textColor="#ffffff"
+        android:background="@color/blue_one"
         android:text="我"/>
     <LinearLayout
         android:layout_marginRight="5dp"
@@ -36,6 +36,7 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.5"/>
             <com.example.katherine_qj.lostandfound.Model.RoundImageView
+                android:id="@+id/my_icon"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:src="@mipmap/head_one"/>
@@ -49,6 +50,7 @@
                 android:layout_height="80dp"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/my_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -59,6 +61,7 @@
                     android:layout_height="1dp"
                     android:background="#dedddd"/>
                 <TextView
+                    android:id="@+id/my_introduce"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -86,6 +89,65 @@
 
     </LinearLayout>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/edittext_style"
+        android:visibility="visible"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_height="100dp">
+        <TextView
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:text="已发表"
+            android:textColorHint="@color/blue_one"
+            android:textColor="#4388af"
+            android:textStyle="bold"/>
+        <TextView
+            android:background="#e2e2e2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:text="已找回"
+            android:textColorHint="@color/blue_one"
+            android:textColor="#4388af"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/my_ButtonLogout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="log out"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/sign_seletor_pressed"
+            android:layout_weight="2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </LinearLayout>

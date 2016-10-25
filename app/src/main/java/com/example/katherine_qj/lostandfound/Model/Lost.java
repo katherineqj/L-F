@@ -6,6 +6,7 @@ import cn.bmob.v3.BmobObject;
  * Created by Katherine-qj on 2016/9/8.
  */
 public class Lost extends BmobObject {
+    private String stu;
     private String lost_title;
     private String lost_time;
     private String lost_place;
@@ -13,6 +14,7 @@ public class Lost extends BmobObject {
     private String lost_phone;
     private String lost_describe;
     private String userid;
+    private String type;
 
     public String getLost_mailbox() {
         return lost_mailbox;
@@ -69,5 +71,21 @@ public class Lost extends BmobObject {
 
     public void setUserid(String userid) {
         this.userid = userid;
+    }
+
+    public String getStu() {
+        return stu;
+    }
+
+    public void setStu(String stu) {
+        this.stu = stu;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

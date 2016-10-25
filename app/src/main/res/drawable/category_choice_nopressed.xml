@@ -1,13 +1,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- 连框颜色值 --><item>
     <shape>
-        <solid android:color="#565655" />
+        <solid android:color="@color/blue_one" />
         <corners android:radius="6dp" />
 
     </shape>
 </item>
 <!-- 主体背景颜色值 -->
-<item android:bottom="0.1dp" android:right="0.1dp" android:top="0.1dp" android:left="0.1dp">
+<item android:bottom="1dp" android:right="1dp" android:top="1dp" android:left="1dp">
     <shape>
         <gradient android:startColor="#ffffff" android:centerColor="#ffffff"
             android:endColor="#ffffff" android:type="linear" android:angle="90"

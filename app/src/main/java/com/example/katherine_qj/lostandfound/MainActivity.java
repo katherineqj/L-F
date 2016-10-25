@@ -1,16 +1,19 @@
 package com.example.katherine_qj.lostandfound;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.RadioGroup;
 
+import com.example.katherine_qj.lostandfound.Control.myLoginActivity;
 import com.example.katherine_qj.lostandfound.Fragment.fragment_add;
 import com.example.katherine_qj.lostandfound.Fragment.fragment_find;
 import com.example.katherine_qj.lostandfound.Fragment.fragment_more;
 import com.example.katherine_qj.lostandfound.Fragment.fragment_my;
 import com.example.katherine_qj.lostandfound.Fragment.fragment_squre;
+import com.example.katherine_qj.lostandfound.Model.LfUser;
 
 
 import cn.bmob.v3.Bmob;
@@ -30,10 +33,17 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         initView();
         Bmob.initialize(this, "88a1bb065f68c21ff18afe308a6861a7");
-        BmobUser bmobUser = BmobUser.getCurrentUser(getApplicationContext());
+      //  BmobUser onlineUser =  BmobUser.getCurrentUser(getApplicationContext());
+        LfUser onlineUser = BmobUser.getCurrentUser(getApplicationContext(),LfUser.class);
+        if (onlineUser!=null){
 
 
 
+        }else{
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(),myLoginActivity.class);
+            startActivity(intent);
+        }
     }
     public void initView(){
         Fragment_Squre = new fragment_squre();
