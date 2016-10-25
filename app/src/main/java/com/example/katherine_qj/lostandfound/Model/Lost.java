@@ -8,8 +8,7 @@ import cn.bmob.v3.BmobObject;
 public class Lost extends BmobObject {
     private String stu;
     private String lost_title;
-    private String lost_time;
-    private String lost_place;
+    private String lost_time_place;
     private String lost_mailbox;
     private String lost_phone;
     private String lost_describe;
@@ -33,12 +32,12 @@ public class Lost extends BmobObject {
         this.lost_phone = lost_phone;
     }
 
-    public String getLost_time() {
-        return lost_time;
+    public String getLost_time_place() {
+        return lost_time_place;
     }
 
-    public void setLost_time(String lost_time) {
-        this.lost_time = lost_time;
+    public void setLost_time_place(String lost_time_place) {
+        this.lost_time_place= lost_time_place;
     }
 
     public String getLost_title() {
@@ -49,13 +48,6 @@ public class Lost extends BmobObject {
         this.lost_title = lost_title;
     }
 
-    public String getLost_place() {
-        return lost_place;
-    }
-
-    public void setLost_place(String lost_place) {
-        this.lost_place = lost_place;
-    }
 
     public String getLost_describe() {
         return lost_describe;

@@ -9,9 +9,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,13 +33,12 @@ import cn.bmob.v3.listener.SaveListener;
  */
 public class add_find_activity extends Activity implements View.OnClickListener{
     private EditText Lost_title;
-    private EditText Lost_time;
-    private EditText Lost_place;
+    private EditText Lost_time_place;
     private EditText Lost_mailbox;
     private EditText Lost_phone;
     private EditText Lost_describe;
     private Button Lost_button;
-    private Button Lost_back;
+    private ImageButton Lost_back;
     private Lost lost;
     private TextView find_type;
 
@@ -43,8 +46,8 @@ public class add_find_activity extends Activity implements View.OnClickListener{
 
 
     private String Lost_String_title;
-    private String Lost_String_time;
-    private String Lost_String_place;
+    private String Lost_String_time_place;
+
     private String Lost_String_mailbox;
     private String Lost_String_phone;
     private String Lost_String_describe;
@@ -55,6 +58,8 @@ public class add_find_activity extends Activity implements View.OnClickListener{
 
 
     private PopupWindow popupWindow;
+    private LinearLayout layoutAgain;
+    private LinearLayout layoutSee;
 
 
 
@@ -74,19 +79,19 @@ public class add_find_activity extends Activity implements View.OnClickListener{
         find_type = (TextView)findViewById(R.id.lost_type);
         find_type.setText(type);
         Lost_title = (EditText)findViewById(R.id.lost_title);
-        Lost_time = (EditText)findViewById(R.id.lost_time);
-        Lost_place = (EditText)findViewById(R.id.lost_place);
+        Lost_time_place = (EditText)findViewById(R.id.lost_time_place);
         Lost_mailbox = (EditText)findViewById(R.id.lost_mailbox);
         Lost_phone = (EditText)findViewById(R.id.lost_phone);
         Lost_describe = (EditText)findViewById(R.id.lost_describe);
         Lost_button = (Button)findViewById(R.id.lost_button);
-        Lost_back = (Button)findViewById(R.id.lost_back);
+        Lost_back = (ImageButton)findViewById(R.id.lost_back);
         Lost_button.setOnClickListener(this);
         Lost_back.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent();
         switch (v.getId()){
             case R.id.lost_button:
                 InitEdit();
@@ -94,8 +99,9 @@ public class add_find_activity extends Activity implements View.OnClickListener{
                     lost.save(this, new SaveListener() {
                         @Override
                         public void onSuccess() {
-                            Toast.makeText(getApplicationContext(), "失物信息添加成功", Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(getApplicationContext(), "失物信息添加成功", Toast.LENGTH_SHORT).show();
                             showPopWindows();
+                            backgroundAlpha(0.3f);
                         }
 
                         @Override
@@ -109,6 +115,19 @@ public class add_find_activity extends Activity implements View.OnClickListener{
             case R.id.lost_back:
                 finish();
                 break;
+            case R.id.success_see:
+                Toast.makeText(getApplicationContext(), "success_see", Toast.LENGTH_SHORT).show();
+                popupWindow.dismiss();
+                break;
+            case R.id.success_again:
+                Toast.makeText(getApplicationContext(), "success_again", Toast.LENGTH_SHORT).show();
+                popupWindow.dismiss();
+                intent.setClass(getApplicationContext(), add_category_choice.class);
+                intent.putExtra("stu", "find");
+                startActivity(intent);
+                finish();
+                break;
+
         }
 
 
@@ -117,17 +136,14 @@ public class add_find_activity extends Activity implements View.OnClickListener{
 
         lost = new Lost();
         Lost_String_title = Lost_title.getText().toString().trim();
-        Lost_String_time = Lost_time.getText().toString().trim();
-        Lost_String_place = Lost_place.getText().toString().trim();
+        Lost_String_time_place = Lost_time_place.getText().toString().trim();
         Lost_String_mailbox = Lost_mailbox.getText().toString().trim();
         Lost_String_phone = Lost_phone.getText().toString().trim();
         Lost_String_describe = Lost_describe.getText().toString().trim();
 
-
         lost.setLost_title(Lost_String_title);
-        lost.setLost_time(Lost_String_time);
+        lost.setLost_time_place(Lost_String_time_place);
         lost.setLost_phone(Lost_String_phone);
-        lost.setLost_place(Lost_String_place);
         lost.setLost_mailbox(Lost_String_mailbox);
         lost.setLost_describe(Lost_String_describe);
         lost.setUserid(objectId);
@@ -146,22 +162,29 @@ public class add_find_activity extends Activity implements View.OnClickListener{
     }
     private void showPopWindows() {
 
-        View contentView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.popwindows_success, null);
-        popupWindow = new PopupWindow(contentView, WindowManager.LayoutParams.WRAP_CONTENT,WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setOutsideTouchable(true);
+       LayoutInflater inflater = (LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.popwindows_success,null);
+        layoutSee = (LinearLayout)layout.findViewById(R.id.success_see);
+        layoutAgain = (LinearLayout)layout.findViewById(R.id.success_again);
+        popupWindow = new PopupWindow(layout, ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setFocusable(true);
+        layoutSee.setOnClickListener(this);
+        layoutAgain.setOnClickListener(this);
         popupWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
         popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.CENTER, 0, 0);
-        contentView.setOnClickListener(new View.OnClickListener() {
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
-            public void onClick(View v) {
-                if (popupWindow.isShowing()){
-                    popupWindow.dismiss();
-                }
+            public void onDismiss() {
+                backgroundAlpha(1f);
             }
         });
 
-
+    }
+    public void backgroundAlpha(float bgAlpha)
+    {
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = bgAlpha; //0.0-1.0
+        getWindow().setAttributes(lp);
     }
 }
 

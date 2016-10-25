@@ -11,15 +11,15 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/lost_back"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
             android:background="@mipmap/back"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="招领"
+            android:text="捡到东西啦"
             android:textSize="18dp"
             android:layout_centerInParent="true"
             android:textColor="#ffffff"/>
@@ -49,7 +49,7 @@
             android:layout_weight="0.1"/>
         <EditText
             android:hint="标题不能为空啊！！！"
-            android:id="@+id/lost_title"
+            android:id="@+id/get_title"
             android:layout_gravity="center_vertical"
             android:layout_width="0dp"
             android:layout_weight="2"
@@ -75,10 +75,10 @@
             android:layout_weight="0.2"/>
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="丢失时间"
+            android:text="时间+地点"
             android:textColor="#363535"
             android:textStyle="bold"
             android:textSize="14dp" />
@@ -87,7 +87,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"/>
         <EditText
-            android:id="@+id/lost_time"
+            android:id="@+id/get_time_place"
             android:layout_gravity="center_vertical"
             android:layout_width="0dp"
             android:layout_weight="2"
@@ -102,147 +102,121 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"/>
     </LinearLayout>
-    <LinearLayout
-        android:background="#ffffff"
-        android:layout_marginTop="1dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="55dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="丢失地点"
-            android:textColor="#363535"
-            android:textStyle="bold"
-            android:textSize="14dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-        <EditText
-            android:id="@+id/lost_place"
-            android:layout_gravity="center_vertical"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:textSize="13dp"
-            android:textColor="#363535"
-            android:gravity="center"
-            android:background="@drawable/edittext_style"
-            android:textColorHint="#AAAAAA"
-            android:layout_height="30dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-    </LinearLayout>
-    <LinearLayout
-        android:background="#ffffff"
-        android:layout_marginTop="1dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="55dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="邮箱"
-            android:textColor="#363535"
-            android:textStyle="bold"
-            android:textSize="14dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-        <EditText
-            android:id="@+id/lost_mailbox"
-            android:layout_gravity="center_vertical"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:textSize="13dp"
-            android:gravity="center"
-            android:textColor="#363535"
-            android:hint="邮箱和电话至少要留下一个啊"
-            android:background="@drawable/edittext_style"
-            android:textColorHint="#AAAAAA"
-            android:layout_height="30dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-    </LinearLayout>
-    <LinearLayout
-        android:background="#ffffff"
-        android:layout_marginTop="1dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="55dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="联系电话"
-            android:textColor="#363535"
-            android:textStyle="bold"
-            android:textSize="14dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-        <EditText
-            android:id="@+id/lost_phone"
-            android:layout_gravity="center_vertical"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:textSize="13dp"
-            android:gravity="center"
-            android:textColor="#363535"
-            android:background="@drawable/edittext_style"
-            android:textColorHint="#AAAAAA"
-            android:layout_height="30dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="100dp">
 
-
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="55dp">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="联系您"
+            android:textColor="#363535"
+            android:textStyle="bold"
+            android:textSize="14dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
         <EditText
-            android:padding="10dp"
-            android:id="@+id/lost_describe"
+            android:id="@+id/get_contact"
             android:layout_gravity="center_vertical"
             android:layout_width="0dp"
-            android:layout_weight="2.6"
+            android:layout_weight="2"
+            android:textSize="13dp"
+            android:gravity="center"
+            android:textColor="#363535"
+            android:hint="只有回答正确才能查看联系方式"
             android:background="@drawable/edittext_style"
             android:textColorHint="#AAAAAA"
-            android:textSize="13dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="55dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="设置问题"
             android:textColor="#363535"
-            android:hint="注：描述物品的详细信息以便于更有效及时的归还"
-            android:layout_height="fill_parent" />
+            android:textStyle="bold"
+            android:textSize="14dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/get_question"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textSize="13dp"
+            android:gravity="center"
+            android:textColor="#363535"
+            android:background="@drawable/edittext_style"
+            android:textColorHint="#AAAAAA"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="55dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="答案的关键字 如：红 或者姓名或品牌"
+            android:textColor="#363535"
+            android:textStyle="bold"
+            android:textSize="14dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/get_answer"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textSize="13dp"
+            android:hint="1到3个字"
+            android:gravity="center"
+            android:textColor="#363535"
+            android:background="@drawable/edittext_style"
+            android:textColorHint="#AAAAAA"
+            android:layout_height="30dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
