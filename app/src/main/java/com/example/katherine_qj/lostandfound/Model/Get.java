@@ -13,6 +13,7 @@ public class Get extends BmobObject {
     private String get_answer;
     private String get_contact;
     private String type;
+    private String userid;
 
     public String getStu() {
         return stu;
@@ -68,5 +69,13 @@ public class Get extends BmobObject {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 }

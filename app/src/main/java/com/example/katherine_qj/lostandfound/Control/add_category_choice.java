@@ -74,11 +74,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","钱包");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","钱包");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.packagestu:
@@ -87,11 +89,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","书包");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","书包");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case  R.id.bciycle:
@@ -100,11 +104,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","自行车");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","自行车");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case  R.id.clothes:
@@ -113,11 +119,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","衣服");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","衣服");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.crad:
@@ -126,11 +134,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","一卡通");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","一卡通");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.key:
@@ -139,11 +149,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","钥匙");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","钥匙");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.shuma:
@@ -152,11 +164,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","数码");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","数码");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.books:
@@ -165,11 +179,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","书籍");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","书籍");
                     startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.others:
@@ -178,11 +194,13 @@ public class add_category_choice extends Activity  implements View.OnClickListen
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","其他");
                     startActivity(intent);
+                    finish();
                 }else{
                     intent.setClass(getApplicationContext(), add_get_activity.class);
                     intent.putExtra("stu", stu);
                     intent.putExtra("type","其他");
                     startActivity(intent);
+                    finish();
                 }
                 break;
 
