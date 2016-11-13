@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.katherine_qj.lostandfound.Model.Get;
 import com.example.katherine_qj.lostandfound.Model.LfUser;
+import com.example.katherine_qj.lostandfound.Model.share;
 import com.example.katherine_qj.lostandfound.R;
 
 import cn.bmob.v3.BmobUser;
@@ -54,6 +55,7 @@ public class add_get_activity extends Activity  implements View.OnClickListener{
     private String type;
     private String objectId;
     private Get get;
+    private share share;
 
     private PopupWindow popupWindow;
     private LinearLayout layoutAgain;
@@ -108,6 +110,18 @@ public class add_get_activity extends Activity  implements View.OnClickListener{
                             Log.e("qqqq", s);
                         }
                     });
+                    share.save(this, new SaveListener() {
+                        @Override
+                        public void onSuccess() {
+
+                        }
+
+                        @Override
+                        public void onFailure(int i, String s) {
+                            Toast.makeText(getApplicationContext(),s , Toast.LENGTH_SHORT).show();
+                            Log.e("qqqq", s);
+                        }
+                    });
                 }
                 break;
             case R.id.get_back:
@@ -134,6 +148,7 @@ public class add_get_activity extends Activity  implements View.OnClickListener{
     }
     public void InitEdit(){
         get = new Get();
+        share = new share();
         Get_string_title = Get_title.getText().toString().trim();
         Get_string_time_place = Get_time_place.getText().toString().trim();
         Get_string_contact = Get_contact.getText().toString().trim();
@@ -148,6 +163,14 @@ public class add_get_activity extends Activity  implements View.OnClickListener{
         get.setStu(stu);
         get.setType(type);
         get.setUserid(objectId);
+        share.setrVget_title(Get_string_title);
+        share.setrVget_time_place(Get_string_time_place);
+        share.setrVget_contact(Get_string_contact);
+        share.setrVget_question(Get_string_question);
+        share.setrVget_answer(Get_string_answer);
+        share.setrVstu(stu);
+        share.setrVtype(type);
+        share.setrVuserid(objectId);
 
     }
     public boolean isOk(){

@@ -35,6 +35,7 @@
         <activity android:name=".Control.myLoginActivity"
             ></activity>
         <activity android:name=".Control.myRegisterActivity"></activity>
+        <activity android:name=".Control.myModifyDataActivity"></activity>
     </application>
 
 </manifest>

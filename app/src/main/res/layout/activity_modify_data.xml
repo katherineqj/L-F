@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#f4f2f2"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue_one"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/my_modify_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人信息"
+            android:textSize="18dp"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/my_modify_icon_linear"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#3e3d3d"
+                android:layout_height="match_parent"
+                android:text="头像" />
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/my_modify_icon_imageview"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/puzzle"/>
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            </LinearLayout>
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f4f2f2" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#3e3d3d"
+                android:layout_height="match_parent"
+                android:text="邮箱" />
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/my_modify_emile_textview"
+                android:textColor="@color/gray_one"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:text="156860180@qq.com"
+                />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f4f2f2" />
+        <LinearLayout
+            android:id="@+id/my_modify_nickname_linear"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#3e3d3d"
+                android:layout_height="match_parent"
+                android:text="昵称" />
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/my_modify_nickname_edittext"
+                android:textColor="@color/gray_one"
+                android:textStyle="bold"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:hint="小于6个字符"
+                android:background="@null" />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/my_modify_place_linear"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#3e3d3d"
+                android:layout_height="match_parent"
+                android:text="地区" />
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/my_modify_place_edittext"
+                android:textColor="@color/gray_one"
+                android:textStyle="bold"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:hint="请添加地区"
+                android:background="@null" />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f4f2f2" />
+        <LinearLayout
+            android:id="@+id/my_modify_introduce_linear"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_weight="0.8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#3e3d3d"
+                android:layout_height="match_parent"
+                android:text="个性签名" />
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/my_modify_introduce_edittext"
+                android:textColor="@color/gray_one"
+                android:textStyle="bold"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:hint="一句话介绍一下自己吧"
+                android:background="@null" />
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"></LinearLayout>
+</LinearLayout>

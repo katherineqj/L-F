@@ -19,7 +19,6 @@ import com.example.katherine_qj.lostandfound.Model.LfUser;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
 
-
 public class MainActivity extends FragmentActivity {
     private fragment_add Fragment_Add;
     private fragment_my Fragment_My;
@@ -43,6 +42,7 @@ public class MainActivity extends FragmentActivity {
             Intent intent = new Intent();
             intent.setClass(getApplicationContext(),myLoginActivity.class);
             startActivity(intent);
+            return;
         }
     }
     public void initView(){

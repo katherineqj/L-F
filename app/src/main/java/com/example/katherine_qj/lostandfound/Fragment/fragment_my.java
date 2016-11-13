@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 
 import com.example.katherine_qj.lostandfound.Control.myLoginActivity;
+import com.example.katherine_qj.lostandfound.Control.myModifyDataActivity;
 import com.example.katherine_qj.lostandfound.Model.LfUser;
 import com.example.katherine_qj.lostandfound.R;
 
@@ -26,7 +27,7 @@ public class fragment_my extends Fragment implements View.OnClickListener {
     private LinearLayout linearLayoutLogin;
     private View rootView;
     private LfUser onlineUser;
-    private TextView myUsername;
+    private TextView myNickName;
     private TextView myIntroduce;
     private String myIcon;
 
@@ -47,14 +48,14 @@ public class fragment_my extends Fragment implements View.OnClickListener {
     }
     public void initView(){
         onlineUser = BmobUser.getCurrentUser(getActivity(), LfUser.class);
-        myUsername = (TextView)rootView.findViewById(R.id.my_user_name);
+        myNickName = (TextView)rootView.findViewById(R.id.my_user_name);
         myIntroduce = (TextView)rootView.findViewById(R.id.my_introduce);
         myButtonLogout = (Button)rootView.findViewById(R.id.my_ButtonLogout);
         myButtonLogout.setOnClickListener(this);
         linearLayoutLogin = (LinearLayout)rootView.findViewById(R.id.Linear_login);
         linearLayoutLogin.setOnClickListener(this);
         if (onlineUser!=null){
-            myUsername.setText((String)BmobUser.getObjectByKey(getActivity(),"username"));
+            myNickName.setText((String)BmobUser.getObjectByKey(getActivity(),"nickname"));
             myIntroduce.setText((String)BmobUser.getObjectByKey(getActivity(),"introduce"));
             myButtonLogout.setBackgroundResource(R.drawable.sign_button_three);
         }
@@ -66,6 +67,9 @@ public class fragment_my extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.Linear_login:
                 if (onlineUser!=null){
+                    intent.setClass(getContext(),myModifyDataActivity.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha);
 
                     //修改资料界面
                     break;
@@ -80,7 +84,7 @@ public class fragment_my extends Fragment implements View.OnClickListener {
             case R.id.my_ButtonLogout:
                 BmobUser.logOut(getActivity());   //清除缓存用户对象
                 onlineUser = BmobUser.getCurrentUser(getActivity(), LfUser.class);
-                myUsername.setText("请登录");
+                myNickName.setText("请登录");
                 myIntroduce.setText("查看或编辑个人资料");
                 myButtonLogout.setBackgroundResource(R.drawable.sign_seletor_pressed);
         }

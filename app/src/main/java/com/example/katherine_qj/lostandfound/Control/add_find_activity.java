@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.katherine_qj.lostandfound.Model.LfUser;
 import com.example.katherine_qj.lostandfound.Model.Lost;
 
+import com.example.katherine_qj.lostandfound.Model.share;
 import com.example.katherine_qj.lostandfound.R;
 
 import cn.bmob.v3.BmobUser;
@@ -40,6 +41,7 @@ public class add_find_activity extends Activity implements View.OnClickListener{
     private Button Lost_button;
     private ImageButton Lost_back;
     private Lost lost;
+    private share share;
     private TextView find_type;
 
     private LfUser onlineUser;
@@ -110,6 +112,18 @@ public class add_find_activity extends Activity implements View.OnClickListener{
                            Log.e("qqqq",s);
                         }
                     });
+                    share.save(this,new SaveListener(){
+                        @Override
+                        public void onSuccess() {
+                            //   Toast.makeText(getApplicationContext(), "失物信息添加成功", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onFailure(int i, String s) {
+                            Toast.makeText(getApplicationContext(),s , Toast.LENGTH_SHORT).show();
+                            Log.e("qqqq",s);
+                        }
+                    });
                 }
                 break;
             case R.id.lost_back:
@@ -133,13 +147,21 @@ public class add_find_activity extends Activity implements View.OnClickListener{
 
     }
     public void InitEdit(){
-
+        share = new share();
         lost = new Lost();
         Lost_String_title = Lost_title.getText().toString().trim();
         Lost_String_time_place = Lost_time_place.getText().toString().trim();
         Lost_String_mailbox = Lost_mailbox.getText().toString().trim();
         Lost_String_phone = Lost_phone.getText().toString().trim();
         Lost_String_describe = Lost_describe.getText().toString().trim();
+        share.setrVlost_title(Lost_String_title);
+        share.setrVlost_time_place(Lost_String_time_place);
+        share.setrVlost_phone(Lost_String_phone);
+        share.setrVlost_mailbox(Lost_String_mailbox);
+        share.setrVlost_describe(Lost_String_describe);
+        share.setrVstu(stu);
+        share.setrVtype(type);
+        share.setrVuserid(objectId);
 
         lost.setLost_title(Lost_String_title);
         lost.setLost_time_place(Lost_String_time_place);

@@ -9,8 +9,33 @@ import cn.bmob.v3.BmobUser;
 public class LfUser extends BmobUser {
     private String nick;
     private String  introduce;
+    private String sex;
+    private String place;
+    private String nickname;
 
+    public String getNickname() {
+        return nickname;
+    }
 
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
 
     public String getNick() {
         return this.nick;

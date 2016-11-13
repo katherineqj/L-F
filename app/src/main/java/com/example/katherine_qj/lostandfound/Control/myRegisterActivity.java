@@ -92,7 +92,12 @@ public class myRegisterActivity extends Activity implements View.OnClickListener
                 newLfUser.setUsername(registerStringUsername);
                 newLfUser.setPassword(registerStringPassword);
                 newLfUser.setEmail(registerStringUsername);
-                newLfUser.setIntroduce("么么哒，求指教(～￣▽￣)～*");
+                newLfUser.setNickname(registerStringUsername);
+                newLfUser.setIntroduce("还没有编辑个人资料~~");
+                newLfUser.setNick(null);
+                newLfUser.setPlace(null);
+                newLfUser.setSex(null);
+
                 newLfUser.signUp(getApplicationContext(), new SaveListener() {
                     @Override
                     public void onSuccess() {
