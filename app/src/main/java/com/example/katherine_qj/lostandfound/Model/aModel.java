@@ -13,13 +13,13 @@ import java.util.List;
  */
 public class aModel {    
     
-    private List<aItemModel> mA;
+    private List<BmobModel> mA;
     
-    public List<aItemModel> getA() {
+    public List<BmobModel> getA() {
         return mA;
     }
 
-    public void setA(List<aItemModel> a) {
+    public void setA(List<BmobModel> a) {
         mA = a;
     }
 

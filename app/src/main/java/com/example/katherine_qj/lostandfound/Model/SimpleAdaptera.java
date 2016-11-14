@@ -16,8 +16,8 @@ import java.util.List;
 public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHolder>{
     private Context context;
     private LayoutInflater mInflater;
-    private List<aItemModel> mDatas;
-    public SimpleAdaptera (Context context,List<aItemModel> mDatas){
+    private List<BmobModel> mDatas;
+    public SimpleAdaptera (Context context,List<BmobModel> mDatas){
         this.context = context;
         this.mDatas = mDatas;
         mInflater = LayoutInflater.from(context);
@@ -32,8 +32,8 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position)
     {
-        holder.recycleViewString.setText(mDatas.get(position).getRVtype());
-        Log.e("title",mDatas.get(position).getRVtype());
+        holder.recycleViewString.setText(mDatas.get(position).getRVgetTitle());
+        Log.e("title",mDatas.get(position).getRVgetTitle());
     }
     @Override
     public int getItemCount()
@@ -50,7 +50,7 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
         public MyViewHolder(View view)
         {
             super(view);
-            recycleViewString = (TextView) view.findViewById(R.id.recycleview_string);
+            recycleViewString = (TextView) view.findViewById(R.id.recycleview_titie);
             recycleViewType = (TextView)view.findViewById(R.id.recycleview_type);
         }
     }

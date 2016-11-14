@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.example.katherine_qj.lostandfound.Model.BmobModel;
 import com.example.katherine_qj.lostandfound.Model.CustomerViewPager;
 import com.example.katherine_qj.lostandfound.Model.DividerGridItemDecoration;
 import com.example.katherine_qj.lostandfound.Model.GsonUtils;
@@ -51,7 +52,7 @@ import cn.bmob.v3.listener.FindListener;
 public class fragment_squre extends Fragment {
     private RecyclerView mRecycleView;//只管回收和服用View 其他的需要自己去设置
     private List<share> mdates;
-    private List<aItemModel> modelList ;
+    private List<BmobModel> modelList ;
   //  private List<sharegsonItemModel>  modelList;
   //  private sharegsonModel sharegsonModel = new sharegsonModel();
     private SimpleAdaptera mAdapter;
@@ -75,7 +76,8 @@ public class fragment_squre extends Fragment {
         initViews();
         viewPager.setViewPageViews(views);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        mRecycleView.setLayoutManager(linearLayoutManager);
+   //     mRecycleView.setLayoutManager(linearLayoutManager);
+        mRecycleView.setLayoutManager(new GridLayoutManager(getContext(),2));
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -123,11 +125,11 @@ public class fragment_squre extends Fragment {
         });
     }
 
-    public List<aItemModel> jiexi(String info){
+    public List<BmobModel> jiexi(String info){
         try {
-            final GsonBuilder gsonBuilder = new GsonBuilder();
-            final Gson gson = gsonBuilder.create();
-            List<aItemModel> a = gson.fromJson(info, new TypeToken<List<aItemModel>>(){}.getType());
+            final Gson gson = new Gson();
+
+            List<BmobModel> a = gson.fromJson(info, new TypeToken<List<BmobModel>>(){}.getType());
             Log.e("1","qwe");
             return a;
         }catch (Exception ex){
@@ -142,7 +144,7 @@ public class fragment_squre extends Fragment {
             viewPager = (CustomerViewPager) rootview.findViewById(R.id.vp);
             mRecycleView = (RecyclerView) rootview.findViewById(R.id.squerrecycleview);
             views = new ArrayList<>();
-            modelList = new ArrayList<aItemModel>();
+            modelList = new ArrayList<BmobModel>();
             aModel = new aModel();
             ImageView imageView1 = new ImageView(getActivity());
             ImageView imageView2 = new ImageView(getActivity());
