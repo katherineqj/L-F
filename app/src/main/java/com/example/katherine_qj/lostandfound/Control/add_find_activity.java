@@ -103,6 +103,7 @@ public class add_find_activity extends Activity implements View.OnClickListener{
                         public void onSuccess() {
                          //   Toast.makeText(getApplicationContext(), "失物信息添加成功", Toast.LENGTH_SHORT).show();
                             showPopWindows();
+                            Log.e("lostaaa",lost.getLost_title());
                             backgroundAlpha(0.3f);
                         }
 
@@ -115,6 +116,7 @@ public class add_find_activity extends Activity implements View.OnClickListener{
                     share.save(this,new SaveListener(){
                         @Override
                         public void onSuccess() {
+                            Log.e("share",share.getrVget_title());
                             //   Toast.makeText(getApplicationContext(), "失物信息添加成功", Toast.LENGTH_SHORT).show();
                         }
 
@@ -154,6 +156,8 @@ public class add_find_activity extends Activity implements View.OnClickListener{
         Lost_String_mailbox = Lost_mailbox.getText().toString().trim();
         Lost_String_phone = Lost_phone.getText().toString().trim();
         Lost_String_describe = Lost_describe.getText().toString().trim();
+
+
         share.setrVlost_title(Lost_String_title);
         share.setrVlost_time_place(Lost_String_time_place);
         share.setrVlost_phone(Lost_String_phone);
