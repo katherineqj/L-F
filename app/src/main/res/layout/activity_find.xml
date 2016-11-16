@@ -1,9 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="find"/>
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee" >
+
+    <LinearLayout
+        android:id="@+id/search_find"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/search_circle_style"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/search_et_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:text="搜索  物品类型  地点  时间"
+            android:textColor="#368ecd"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/search_bt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/search_button" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/search_find"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:background="#44f1efef" />
+
+    <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search_find" >
+
+        <LinearLayout
+            android:id="@+id/search_feilei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/blue_one"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/search_biaoqian" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:text="分类"
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/search_felei_line"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_feilei"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/blue_one" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_felei_line"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:background="#44f1efef"/>
+
+        <LinearLayout
+            android:id="@+id/search_pinmian"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/search_felei_line"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="钱包"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="书包"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="自行车"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="衣服"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_xuni"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/search_pinmian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="一卡通"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="钥匙"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="数码"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="书籍"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_tuijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_xuni"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/blue_one"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/search_biaoqian" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:text="热门"
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/search_tuijian_line"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_tuijian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/blue_one" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_tuijian_line"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:background="#44f1efef" />
+
+        <LinearLayout
+            android:id="@+id/search_renqi"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/search_tuijian_line"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="书包"
+                android:textSize="14dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="一卡通"
+                android:textSize="14dp"
+                android:id="@+id/button2" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_shijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_renqi"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/blue_one"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/search_biaoqian" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:text="其他"
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/search_shijian_line"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_shijian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/blue_one" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/search_shijian_line"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:background="#44f1efef" />
+
+        <LinearLayout
+            android:id="@+id/search_zuihou"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/search_shijian_line"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yinying"
+                android:onClick="searchOnClick"
+                android:padding="5dp"
+                android:tag="0"
+                android:text="MORE"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/search_result"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search_find"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+
+    </LinearLayout>
+
+</RelativeLayout>
