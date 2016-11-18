@@ -20,6 +20,7 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
     private Context context;
     private LayoutInflater mInflater;
     private List<BmobModel> mDatas;
+    private MyItemClickListener mClickListener;
     Resources r ;
     public SimpleAdaptera (Context context,List<BmobModel> mDatas){
         this.context = context;
@@ -31,9 +32,12 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new MyViewHolder(mInflater.inflate(R.layout.itemsiglerecycleview,parent,false));
+        return new MyViewHolder(mInflater.inflate(R.layout.itemsiglerecycleview,parent,false),mClickListener);
     }
 
+    public void setmClickListener(MyItemClickListener listener){
+        this.mClickListener = listener;
+    }
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position)
     {
@@ -53,21 +57,32 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
         return mDatas.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
 
-        TextView recycleViewUserName;
-        TextView recycleViewType;
-        TextView recycleViewString;
-        ImageView recycleViewStuImage;
+        public  TextView recycleViewUserName;
+        public  TextView recycleViewType;
+        public  TextView recycleViewString;
+        public  ImageView recycleViewStuImage;
+        private MyItemClickListener myItemClickListener;
 
-        public MyViewHolder(View view)
+        public MyViewHolder(View view,MyItemClickListener myItemClickListener)
         {
             super(view);
             recycleViewUserName = (TextView) view.findViewById(R.id.recycleview_username);
             recycleViewType = (TextView)view.findViewById(R.id.recycleview_type);
             recycleViewString = (TextView)view.findViewById(R.id.recycleview_string);
             recycleViewStuImage = (ImageView)view.findViewById(R.id.recycleview_stu);
+            this.myItemClickListener = myItemClickListener;
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (myItemClickListener!=null){
+                myItemClickListener.onItemClick(view,getPosition());
+            }
+
         }
     }
     public int chageStu(String stu){

@@ -1,6 +1,7 @@
 package com.example.katherine_qj.lostandfound;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -26,11 +27,13 @@ public class MainActivity extends FragmentActivity {
     private fragment_more Fragment_More;
     private fragment_find Fragment_Find;
     private RadioGroup my_tab_menu;
+    public static Context mainActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        mainActivity = getApplication();
         Bmob.initialize(this, "88a1bb065f68c21ff18afe308a6861a7");
       //  BmobUser onlineUser =  BmobUser.getCurrentUser(getApplicationContext());
         LfUser onlineUser = BmobUser.getCurrentUser(getApplicationContext(),LfUser.class);

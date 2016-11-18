@@ -40,6 +40,7 @@ public class myLoginActivity extends Activity implements View.OnClickListener {
     private String stringUsername;
     private String stringPassword;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,7 @@ public class myLoginActivity extends Activity implements View.OnClickListener {
         buttonSignup.setOnClickListener(this);
         buttonSee =(Button)findViewById(R.id.buttonSee);
         buttonSee.setOnClickListener(this);
+
     }
 
     @Override

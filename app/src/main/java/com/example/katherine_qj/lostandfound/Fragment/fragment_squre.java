@@ -19,10 +19,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.example.katherine_qj.lostandfound.MainActivity;
 import com.example.katherine_qj.lostandfound.Model.BmobModel;
 import com.example.katherine_qj.lostandfound.Model.CustomerViewPager;
 import com.example.katherine_qj.lostandfound.Model.DividerGridItemDecoration;
 import com.example.katherine_qj.lostandfound.Model.GsonUtils;
+import com.example.katherine_qj.lostandfound.Model.MyItemClickListener;
 import com.example.katherine_qj.lostandfound.Model.SimpleAdaptera;
 import com.example.katherine_qj.lostandfound.Model.aItemModel;
 import com.example.katherine_qj.lostandfound.Model.aModel;
@@ -49,7 +51,7 @@ import cn.bmob.v3.listener.FindListener;
 /**
  * Created by Katherine-qj on 2016/9/4.
  */
-public class fragment_squre extends Fragment {
+public class fragment_squre extends Fragment implements MyItemClickListener {
     private RecyclerView mRecycleView;//只管回收和服用View 其他的需要自己去设置
     private List<share> mdates;
     private List<BmobModel> modelList ;
@@ -74,6 +76,7 @@ public class fragment_squre extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.activity_squre, null);
         initViews();
+        //initDatas();
         viewPager.setViewPageViews(views);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
    //     mRecycleView.setLayoutManager(linearLayoutManager);
@@ -92,6 +95,8 @@ public class fragment_squre extends Fragment {
          @Override
          public void handleMessage(Message msg) {
              mAdapter = new SimpleAdaptera(getContext(), modelList);
+             mAdapter.setmClickListener(fragment_squre.this);
+           //  mAdapter.setmClickListener(getActivity());//问题出在this是当前 但需要上一级
              mRecycleView.setAdapter(mAdapter);
          }
      };
@@ -161,4 +166,10 @@ public class fragment_squre extends Fragment {
             views.add(imageView4);
 
         }
+
+    @Override
+    public void onItemClick(View view, int postion) {
+            Toast.makeText(getContext(), postion+" ",Toast.LENGTH_SHORT).show();
+
+    }
 }
