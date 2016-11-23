@@ -30,6 +30,9 @@ public class fragment_my extends Fragment implements View.OnClickListener {
     private TextView myNickName;
     private TextView myIntroduce;
     private String myIcon;
+    private String  stringMyNickName;
+    private String  stringMyIntroduce;
+    private String  stringMyPlace;
 
 
     private Button myButtonLogout;
@@ -37,6 +40,12 @@ public class fragment_my extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initView();
     }
 
     @Nullable
@@ -55,8 +64,11 @@ public class fragment_my extends Fragment implements View.OnClickListener {
         linearLayoutLogin = (LinearLayout)rootView.findViewById(R.id.Linear_login);
         linearLayoutLogin.setOnClickListener(this);
         if (onlineUser!=null){
-            myNickName.setText((String)BmobUser.getObjectByKey(getActivity(),"nickname"));
-            myIntroduce.setText((String)BmobUser.getObjectByKey(getActivity(),"introduce"));
+            stringMyNickName = (String )BmobUser.getObjectByKey(getActivity(),"nickname");
+            stringMyIntroduce = (String)BmobUser.getObjectByKey(getActivity(),"introduce");
+            stringMyPlace = (String)BmobUser.getObjectByKey(getActivity(),"place");
+            myNickName.setText(stringMyNickName);
+            myIntroduce.setText(stringMyIntroduce);
             myButtonLogout.setBackgroundResource(R.drawable.sign_button_three);
         }
     }
@@ -68,9 +80,13 @@ public class fragment_my extends Fragment implements View.OnClickListener {
             case R.id.Linear_login:
                 if (onlineUser!=null){
                     intent.setClass(getContext(),myModifyDataActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("nikename",stringMyNickName);
+                    bundle.putString("introduce",stringMyIntroduce);
+                    bundle.putString("place",stringMyPlace);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                     getActivity().overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha);
-
                     //修改资料界面
                     break;
 

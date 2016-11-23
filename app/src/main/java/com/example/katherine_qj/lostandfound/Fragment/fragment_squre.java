@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,12 +52,10 @@ import cn.bmob.v3.listener.FindListener;
 /**
  * Created by Katherine-qj on 2016/9/4.
  */
-public class fragment_squre extends Fragment implements MyItemClickListener {
+public class fragment_squre extends Fragment implements MyItemClickListener ,SwipeRefreshLayout.OnRefreshListener{
     private RecyclerView mRecycleView;//只管回收和服用View 其他的需要自己去设置
     private List<share> mdates;
     private List<BmobModel> modelList ;
-  //  private List<sharegsonItemModel>  modelList;
-  //  private sharegsonModel sharegsonModel = new sharegsonModel();
     private SimpleAdaptera mAdapter;
     public CustomerViewPager viewPager;
     private List<View> views;
@@ -64,7 +63,7 @@ public class fragment_squre extends Fragment implements MyItemClickListener {
     public String jsonString;
     public GsonUtils<aModel> gsonUtils;
     private  aModel aModel ;
-   //// private shareGsonUtils <sharegsonModel> shareGsonUtils = new shareGsonUtils<>();
+    private SwipeRefreshLayout recycle_fresh;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -165,11 +164,30 @@ public class fragment_squre extends Fragment implements MyItemClickListener {
             imageView4.setBackgroundResource(R.drawable.lunbod);
             views.add(imageView4);
 
+            recycle_fresh = (SwipeRefreshLayout)rootview.findViewById(R.id.recycleView_refresh);
+            recycle_fresh.setColorSchemeResources(android.R.color.holo_red_dark,
+                    android.R.color.holo_blue_dark,
+                    android.R.color.holo_green_dark,
+                    android.R.color.holo_orange_dark);
+            recycle_fresh.setSize(SwipeRefreshLayout.LARGE);
+            recycle_fresh.setProgressViewEndTarget(true, 100);
+            recycle_fresh.setOnRefreshListener(this);
         }
 
     @Override
     public void onItemClick(View view, int postion) {
             Toast.makeText(getContext(), postion+" ",Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                recycle_fresh.setRefreshing(false);
+            }
+        }, 1000);
     }
 }

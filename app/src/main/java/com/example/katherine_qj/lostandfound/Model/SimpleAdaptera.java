@@ -101,5 +101,11 @@ public class SimpleAdaptera extends RecyclerView.Adapter<SimpleAdaptera.MyViewHo
         }
     }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
 
+
+    }
 }

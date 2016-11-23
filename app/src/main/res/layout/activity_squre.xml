@@ -9,10 +9,16 @@
        android:layout_width="fill_parent"
        android:layout_height="200dp">
    </com.example.katherine_qj.lostandfound.Model.CustomerViewPager>
-   <android.support.v7.widget.RecyclerView
-       android:id="@+id/squerrecycleview"
-     android:layout_marginTop="10dp"
+   <android.support.v4.widget.SwipeRefreshLayout
+       android:id="@+id/recycleView_refresh"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
-   </android.support.v7.widget.RecyclerView>
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/squerrecycleview"
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+         </android.support.v7.widget.RecyclerView>
+   </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>
